@@ -11,6 +11,12 @@ Just query the CartoDB table at http://mpatlas.cartodb.com/tables/im_in_alerts
 
 Uses ionic-angular-cordova-seed to run the mobile app
 
+Mockups
+--------
+Here is the prototype with a bit more design
+http://invis.io/M81P861N9 
+
+
 Protected Areas boundaries from 
 ==========================
 
@@ -21,6 +27,7 @@ Query boundaries on distance query from mobile user location, return geojson fea
 Protected Area metadata available via ProtectedPlanet API
 http://alpha.protectedplanet.net/api/v3/protected_areas/wdpaid
 
-Here's a point in polygon library
+Use point in polygon to create geofence alerts
 https://github.com/mapbox/leaflet-pip
-although we can just use the native geofence code to do this.
+or original
+https://github.com/substack/point-in-polygon
