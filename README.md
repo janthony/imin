@@ -14,7 +14,7 @@ Uses ionic-angular-cordova-seed to run the mobile app
 Mockups
 --------
 Here is the prototype for a guide to the functional design.
-http://invis.io/YT1P7Z5H7
+http://invis.io/M81P861N9
 
 Please use this only as a functional guide and feel free to add whatever design you like. Comments annotated to describe intended user flow.
 
