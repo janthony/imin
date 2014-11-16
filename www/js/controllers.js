@@ -6,3 +6,9 @@ angular.module('imin.controllers', [])
   // "Pets" is a service returning mock data (services.js)
   $scope.pets = PetService.all();
 })
+.controller('SignupCtrl', function($scope, $state) {
+  $scope.signup = function(){
+ 	$state.transitionTo("home");
+  	console.log("route to home");
+  };
+});

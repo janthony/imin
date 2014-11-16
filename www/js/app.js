@@ -19,10 +19,15 @@ angular.module('imin', ['ionic', 'imin.services', 'imin.controllers',
     .state('home', {
       url: '/home',
       templateUrl: 'templates/home.html'
+    })
+    .state('signup', {
+      url: '/signup',
+      templateUrl: 'templates/signup.html',
+      controller: 'SignupCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/signup');
 
 });
 
