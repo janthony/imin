@@ -2,9 +2,10 @@ angular.module('imin.controllers', [])
 
 
 // A simple controller that fetches a list of data from a service
-.controller('HomeCtrl', function($scope, CartodbService, ConservationAreaInfoService, WDPAService) {
+.controller('HomeCtrl', function($scope, CartodbService, ConservationAreaInfoService, WDPAService, leafletData) {
+	$scope.mapCenter = {};
 	var onSuccess = function(position) {
-	    alert('Latitude: '          + position.coords.latitude          + '\n' +
+	    console.log('Latitude: '          + position.coords.latitude          + '\n' +
 	          'Longitude: '         + position.coords.longitude         + '\n' +
 	          'Altitude: '          + position.coords.altitude          + '\n' +
 	          'Accuracy: '          + position.coords.accuracy          + '\n' +
@@ -12,7 +13,29 @@ angular.module('imin.controllers', [])
 	          'Heading: '           + position.coords.heading           + '\n' +
 	          'Speed: '             + position.coords.speed             + '\n' +
 	          'Timestamp: '         + position.timestamp                + '\n');
-	    WDPAService.get_nearby_features(position.coords.latitude, position.coords.longitude, 100);
+		
+		// Load protected areas.	    
+	    var promise = WDPAService.get_nearby_features(position.coords.latitude, position.coords.longitude, 100);
+	    // TODO: Get the features and load it into the map in this controller. Currently its done in the service method.
+
+	    // Center the map. (by updating the leaflet directive center attribute bound model variable)
+	    $scope.mapCenter = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+            zoom: 10
+        };
+
+		// leafletData.getMap().then(function(map) {
+		// 	cartodb.createLayer(map, 'https://osm2.cartodb.com/viz/6bf17e72-68fe-11e4-957b-0e9d821ea90d/public_map')
+		// 	    .addTo(map)
+		// 	    .on('done', function(layer) {
+		// 	      //do stuff
+		// 	    })
+		// 	    .on('error', function(err) {
+		// 	      alert("some error occurred: " + err);
+		// 	    });        
+		// 	});
+
 	};
 
 	function onError(error) {

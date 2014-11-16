@@ -1,5 +1,5 @@
 angular.module('imin.services')
-.factory('WDPAService', function( $http, leafletData ) {
+.factory('WDPAService', function( $http, leafletData, $q) {
 
 	var fences = [];
 	var reload_fence = {}
@@ -12,6 +12,8 @@ angular.module('imin.services')
 		// leaflet-pip.min.js -- provides leafletPip  [ https://github.com/mapbox/leaflet-pip ]
 
 		get_nearby_features: function (lat, lon, radius_km) {
+			var deferred = $q.defer();
+
 			// lat = -33;
 			// lon = 150;
 			// radius_km = 10;
@@ -53,7 +55,6 @@ angular.module('imin.services')
 		            // do something about errors, or don't
 		        });
 
-		    var lefletservice = leafletData;
 		    // Get actual geometries
 		    $http.get("http://carbon-tool.cartodb.com/api/v2/sql?format=geojson&q=SELECT wdpaid, the_geom FROM public.wdpa_poly_production " + 
 		    			"WHERE ST_DWithin(ST_Transform(ST_SetSRID(ST_Point(" + lon + "," + lat + "),4326),3857),the_geom, " + radius_m + 
@@ -76,12 +77,17 @@ angular.module('imin.services')
 						    }
 						})
 						.addTo(map);
+
+						deferred.resolve(features);	
             		});
 
 		        }).
 		        error(function(data, status, headers, config) {
 		            // do something about errors, or don't
+		            deferred.reject(data)
 		        });
+
+		    return deferred.promise;
 		},
 
 		am_i_in: function(lat, lon) {
