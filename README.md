@@ -6,7 +6,7 @@ Hey! We'll let you know when you enter a protected area anywhere on Earth, from 
 Also, I'm In! Park Manager Dashboard
 --------------------------
 
-See visitor entrances and exits to protected areas to which you subscribe.  This is a perfect drop in to Sky Dribble.
+See visitor entrances and exits to protected areas to which you subscribe.  This is a perfect drop in to Sky Dipper.
 Just query the CartoDB table at http://mpatlas.cartodb.com/tables/im_in_alerts
 
 Uses ionic-angular-cordova-seed to run the mobile app
