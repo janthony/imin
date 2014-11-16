@@ -18,7 +18,9 @@ angular.module('imin', ['ionic', 'imin.services', 'imin.controllers',
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'templates/home.html'
+      templateUrl: 'templates/home.html',
+      controller: 'HomeCtrl'
+
     })
     .state('signup', {
       url: '/signup',
