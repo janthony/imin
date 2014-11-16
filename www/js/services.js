@@ -1,9 +1,9 @@
-angular.module('starter.services', [])
+angular.module('imin.services', [])
 
 /**
  * A simple example service that returns some data.
  */
-.factory('PetService', function() {
+.factory('CartodbService', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
