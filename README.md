@@ -17,6 +17,9 @@ Hosted on CartoDB here:
 https://carbon-tool.cartodb.com/tables/wdpa_poly_production/public/map
 Query boundaries on distance query from mobile user location, return geojson features (boundaries + metadata)
 
+Protected Area metadata available via ProtectedPlanet API
+http://alpha.protectedplanet.net/api/v3/protected_areas/wdpaid
+
 Use point in polygon to create geofence alerts
 https://github.com/mapbox/leaflet-pip
 or original
