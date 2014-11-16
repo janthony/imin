@@ -1,16 +1,18 @@
-I'm In: Parks
+I'm In! World Parks Edition
 ==========================
 
-mobile app framework using
+Hey! We'll let you know when you enter a protected area anywhere on Earth, from national parks in Sub-Saharan Africa to marine protected areas in Australia.  Find out if there are any activities restricted within the park, learn about important points of interest, and see recent tweets and photos from others nearby in the park.
 
-ionic-angular-cordova-seed
-==========================
+Also, I'm In! Park Manager Dashboard
+--------------------------
 
-The perfect starting point for an Ionic project.
+See visitor entrances and exits to protected areas to which you subscribe.  This is a perfect drop in to Sky Dribble.
+Just query the CartoDB table at http://mpatlas.cartodb.com/tables/im_in_alerts
 
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
-- 
-Protected Areas boundaries from WDPA/Protected Planet
+Uses ionic-angular-cordova-seed to run the mobile app
+
+
+Protected Areas boundaries from 
 ==========================
 
 Hosted on CartoDB here:
