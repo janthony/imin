@@ -23,4 +23,26 @@ angular.module('imin.services', [])
       return pets[petId];
     }
   }
+})
+.factory('ConservationAreaInfoService', function(){
+  var conservationAreaInfo = [
+    {
+      name: "conservation area 1 ",
+      detail: "some description",
+      image: "http://image url",
+      link: "http://more info url"
+    },
+    {
+      name: "conservation area 1 ",
+      detail: "some description",
+      image: "http://image url",
+      link: "http://more info url"
+    }
+  ];
+
+  return {
+    getConservervationAreaInfo: function( name ){
+        return conservationAreaInfo;
+    }
+  }
 });

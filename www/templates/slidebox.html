@@ -1,0 +1,28 @@
+<ion-nav-bar></ion-nav-bar>
+<ion-nav-view class="slide-left-right">
+  <ion-view title="imin">
+    <ion-content data-tap-disabled="false">
+    	<div class="imin-slidebox">
+			<ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="true"  ng-repeat="slide in slides">
+<!-- 			  <ion-slide>
+			  		<!--  TODO: Need to build a generic slide directive 
+			    <div class="box blue"><h1>BLUE</h1></div>
+			  </ion-slide>
+			  <ion-slide>
+			    <div class="box yellow"><h1>YELLOW</h1></div>
+			  </ion-slide>
+			  <ion-slide>
+			    <div class="box pink"><h1>PINK</h1></div>
+			  </ion-slide>
+ -->
+				<ion-slide>
+			    	<div class="box">
+			    		<h2>{{ slide.name }}</h2>
+			    		<h3>{{ slide.description }}</h3>
+			    	</div>
+			  	</ion-slide>
+ 			</ion-slide-box>
+	    </div>
+    </ion-content>
+  </ion-view>
+</ion-nav-view>

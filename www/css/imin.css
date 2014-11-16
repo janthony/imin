@@ -1,4 +1,11 @@
 .imin-signup {
 	top: 100px;
 	position: fixed;
+	padding: 20px;
+}
+.imin-slidebox{
+	top: 30px;
+	position: fixed;
+	padding-left: 20px;
+	padding-right: 20px;
 }

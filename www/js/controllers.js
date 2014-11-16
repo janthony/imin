@@ -2,7 +2,7 @@ angular.module('imin.controllers', [])
 
 
 // A simple controller that fetches a list of data from a service
-.controller('HomeCtrl', function($scope, CartodbService) {
+.controller('HomeCtrl', function($scope, CartodbService, ConservationAreaInfoService) {
 		var onSuccess = function(position) {
 	    alert('Latitude: '          + position.coords.latitude          + '\n' +
 	          'Longitude: '         + position.coords.longitude         + '\n' +
@@ -82,9 +82,8 @@ angular.module('imin.controllers', [])
 
 	// var params = [fid, latitude, longitude, radius];
 	var params = ["1", "40.781552", "-73.967171", "150"];
-	alert("geofening " + window.plugins.DGGeofencing.initCallbackForRegionMonitoring);
 	window.plugins.DGGeofencing.startMonitoringRegion(params, function(result) {}, function(error) {
-	    alert("failed to add region");
+		alert("failed to add region");
 	});
 })
 .controller('SignupCtrl', function($scope, $state) {
@@ -92,4 +91,8 @@ angular.module('imin.controllers', [])
  	$state.transitionTo("home");
   	console.log("route to home");
   };
+})
+.controller('SlideboxCtrl', function($scope, ConservationAreaInfoService, $ionicSlideBoxDelegate) {
+	$scope.slides = ConservationAreaInfoService.getConservervationAreaInfo("todo");
+	$ionicSlideBoxDelegate.update();
 });

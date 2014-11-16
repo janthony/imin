@@ -26,6 +26,11 @@ angular.module('imin', ['ionic', 'imin.services', 'imin.controllers',
       url: '/signup',
       templateUrl: 'templates/signup.html',
       controller: 'SignupCtrl'
+    })
+    .state('slidebox', {
+      url: '/slidebox',
+      templateUrl: 'templates/slidebox.html',
+      controller: 'SlideboxCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback
