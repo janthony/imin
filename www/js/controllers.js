@@ -4,8 +4,20 @@ angular.module('imin.controllers', [])
 // A simple controller that fetches a list of data from a service
 .controller('HomeCtrl', function($scope, CartodbService, ConservationAreaInfoService, WDPAService, leafletData) {
 	$scope.mapCenter = {};
+	angular.extend($scope, {
+		tiles: {
+	        name: 'Mapbox Terrain',
+	        url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
+	        type: 'xyz',
+	        options: {
+	            apikey: 'pk.eyJ1IjoidG9tYmF0b3NzYWxzIiwiYSI6Imo3MWxyTHMifQ.TjXg_IV7ZYMHX6tqjMikPg',
+	            mapid: 'tombatossals.jbn2nnon'
+	        }
+		}
+	})
+
 	var onSuccess = function(position) {
-	    console.log('Latitude: '          + position.coords.latitude          + '\n' +
+	    alert('Latitude: '          + position.coords.latitude          + '\n' +
 	          'Longitude: '         + position.coords.longitude         + '\n' +
 	          'Altitude: '          + position.coords.altitude          + '\n' +
 	          'Accuracy: '          + position.coords.accuracy          + '\n' +
@@ -113,7 +125,6 @@ angular.module('imin.controllers', [])
 .controller('SignupCtrl', function($scope, $state) {
   $scope.signup = function(){
  	$state.transitionTo("home");
-  	console.log("route to home");
   };
 })
 .controller('SlideboxCtrl', function($scope, ConservationAreaInfoService, $ionicSlideBoxDelegate) {
